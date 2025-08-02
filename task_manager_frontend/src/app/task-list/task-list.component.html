@@ -1,0 +1,22 @@
+<div class="task-list-container">
+  <div class="task-list-header">
+    <h2>Your Tasks</h2>
+    <button class="add-btn">
+      <span class="material-symbols-outlined">add</span>
+      Add
+    </button>
+  </div>
+  <ul class="task-list">
+    <li 
+      *ngFor="let task of tasks" 
+      [class.selected]="selectedTaskId === task.id"
+      (click)="selectTask(task.id)">
+      <div class="task-title">{{ task.title }}</div>
+      <div class="meta">
+        <span class="priority badge-{{task.priority.toLowerCase()}}">{{ task.priority }}</span>
+        <span class="due">{{ task.due }}</span>
+        <span class="progress">{{ task.progress }}%</span>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,15 @@
+<div class="header-container">
+  <div class="search-area">
+    <input 
+      class="search-input"
+      type="text"
+      placeholder="Search tasks..."
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()" 
+    />
+    <span class="material-symbols-outlined search-icon">search</span>
+  </div>
+  <div class="profile-area">
+    <span class="profile-avatar"></span>
+  </div>
+</div>
