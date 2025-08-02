@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
-import { TaskListComponent } from './task-list/task-list.component';
-import { TaskDetailComponent } from './task-detail/task-detail.component';
-import { NgIf } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 // PUBLIC_INTERFACE
 @Component({
@@ -13,10 +10,9 @@ import { RouterOutlet } from '@angular/router';
   imports: [
     SidebarComponent,
     HeaderComponent,
-    TaskListComponent,
-    TaskDetailComponent,
-    NgIf,
-    RouterOutlet
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -25,7 +21,7 @@ import { RouterOutlet } from '@angular/router';
  * Root application component. Houses the main layout:
  * - Sidebar navigation (app-sidebar)
  * - Header with search/profile (app-header)
- * - Main content: Task List (app-task-list) and Task Details (app-task-detail)
+ * - Tab navigation and main routed content
  */
 export class AppComponent {
   // Placeholder for authentication state

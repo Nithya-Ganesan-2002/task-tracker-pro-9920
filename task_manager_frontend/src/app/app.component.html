@@ -2,13 +2,21 @@
   <app-sidebar></app-sidebar>
   <div class="main-content">
     <app-header></app-header>
-    <div class="content-body">
-      <div class="task-list-section">
-        <app-task-list></app-task-list>
-      </div>
-      <div class="task-detail-section">
-        <app-task-detail></app-task-detail>
-      </div>
+    <div class="tabs-bar">
+      <nav class="tabs">
+        <a
+          class="tab-link"
+          routerLink="/tasks"
+          routerLinkActive="tab-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >Tasks</a>
+        <a
+          class="tab-link"
+          routerLink="/tasks/plans"
+          routerLinkActive="tab-active"
+        >Plans</a>
+      </nav>
     </div>
+    <router-outlet></router-outlet>
   </div>
 </div>
