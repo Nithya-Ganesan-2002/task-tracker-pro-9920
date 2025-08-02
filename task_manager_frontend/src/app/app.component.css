@@ -33,6 +33,46 @@ app-header {
   z-index: 10;
 }
 
+.tabs-bar {
+  height: 48px;
+  min-height: 48px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 9;
+}
+
+.tabs {
+  display: flex;
+  gap: 32px;
+  height: 100%;
+}
+
+.tab-link {
+  font-size: 1.12rem;
+  font-weight: 500;
+  color: #1976d2;
+  text-decoration: none;
+  opacity: 0.7;
+  border-bottom: 2px solid transparent;
+  margin-right: 28px;
+  height: 48px;
+  line-height: 48px;
+  display: inline-block;
+  transition: opacity 0.15s, border 0.18s;
+  padding: 0 8px;
+}
+
+.tab-active,
+.tab-link:hover {
+  opacity: 1;
+  color: #1976d2;
+  border-bottom: 2.5px solid #ffcc00;
+  background: none;
+}
+
 .content-body {
   flex: 1;
   display: flex;

@@ -1,0 +1,10 @@
+.plans-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #1976d2;
+  min-height: 70vh;
+  font-size: 1.6rem;
+  background: #fff;
+}
