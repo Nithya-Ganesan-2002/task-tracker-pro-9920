@@ -1,0 +1,44 @@
+<div class="task-detail-container">
+  <div class="task-head">
+    <input class="task-title"
+           type="text"
+           [(ngModel)]="task.title"
+           placeholder="Task title">
+    <button class="delete-btn" (click)="deleteTask()">
+      <span class="material-symbols-outlined">delete</span>
+    </button>
+  </div>
+  <textarea [(ngModel)]="task.description"
+            class="task-desc"
+            rows="3"
+            placeholder="Task description"></textarea>
+  <div class="detail-row">
+    <label>Due date:</label>
+    <input type="date" [(ngModel)]="task.due" class="input-date">
+    <label>Priority:</label>
+    <select [(ngModel)]="task.priority" class="input-priority">
+      <option>High</option>
+      <option>Medium</option>
+      <option>Low</option>
+    </select>
+    <label>Progress:</label>
+    <input 
+      type="number" 
+      [(ngModel)]="task.progress" 
+      min="0" max="100" 
+      class="input-progress">%
+  </div>
+  <div class="subtasks-area">
+    <h4>Subtasks</h4>
+    <ul class="subtask-list">
+      <li *ngFor="let subtask of task.subtasks">
+        <input type="checkbox" [(ngModel)]="subtask.complete">
+        {{ subtask.title }}
+      </li>
+    </ul>
+  </div>
+  <div class="actions">
+    <button class="accent" (click)="completeTask()">Mark Complete</button>
+    <button class="primary" (click)="saveEdits()">Save</button>
+  </div>
+</div>
